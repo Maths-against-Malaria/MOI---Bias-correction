@@ -1,0 +1,11 @@
+# function return N multinomial vectors, where the kth vector is distributiod Mult(m_k;p_1,...,p_n) 
+# M=(m_1,...,m_N), dist=(p_1,...,p_n)...frequency distribution  
+
+mnom <- function(M, dist) { 
+  N <-length(M)
+  out<-array(0,dim=c(N,length(dist)))
+  for(k in 1:N){
+    out[k,]=rmultinom(1,M[k],dist)
+  }
+  out
+}
