@@ -1,3 +1,31 @@
+#' Derives the MLE of MOI parameter and frequency spectra
+#'
+#' @description derives the maximum-likelihood estimate (MLE) of the MOI
+#'   parameter (Poisson parameter) and the lineage (allele) frequencies.
+#'
+#' @param N integer; sample size
+#' @param Nk integer vector; number of lineage prevalence counts in a dataset.
+#'   for a simulated data this is simply derived as \code{colSums(dataset)}. To derive
+#'   the MLE and lineage prevalence counts for a real dataset please refer to
+#'   the package \link[MLMOI]{moimle}.
+#'
+#' @return list; 
+#' 1. ml...maximum log-likelihood, 
+#' 2. mle_lam...the MLE of MOI parameter lambda 
+#' 3. mle_psi...the MLE of mean MOI psi 
+#' 4. mle_p...the MLE of lineage frequencies
+#'
+#' @export
+#'
+#' @examples
+#' \donotrun{
+#' m <- cpoiss(2, 150) #lambda = 2, N = 150
+#' p <- c(0.6,0.4) #lineage frequencies
+#' dataset <- mnom(m, p)
+#' Nk <- colSums(dataset)
+#' MLE(150, Nk)
+#' }
+#' 
 MLE <- function(N, Nk){
   sel <- Nk
   Nk <- sel[sel>0]
