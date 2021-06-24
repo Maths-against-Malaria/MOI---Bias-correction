@@ -25,6 +25,7 @@
 #' Nk <- colSums(dataset)
 #' MLE(150, Nk)
 #' }
+#' 
 MLE <- function(N, Nk){
   sel <- Nk
   Nk <- sel[sel>0]
