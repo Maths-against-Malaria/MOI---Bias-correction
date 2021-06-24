@@ -1,6 +1,6 @@
 #' Derives the HBCMLE3 of MOI parameter and frequency spectra
 #'
-#' @description derives the 1st version of heuristically bias-corrected
+#' @description derives the 3rd version of heuristically bias-corrected
 #'   maximum-likelihood estimate (HBCMLE3) of the MOI parameter (Poisson
 #'   parameter) and the lineage (allele) frequencies.
 #'

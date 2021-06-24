@@ -1,10 +1,6 @@
-# This function provides conditionally Poisson distributed numbers
-# lambda...Poisson parameter
-# n...number of conditional Poisson numbers to be generated
-
-#' Generates conditionally Poisson distributed numbers
+#' Generates conditionally Poisson distributed random numbers
 #'
-#' @description This function provides conditionally Poisson distributed numbers
+#' @description This function generates conditionally Poisson distributed numbers
 #'
 #' @param lambda numeric; the MOI parameter
 #' @param N integer; sample size

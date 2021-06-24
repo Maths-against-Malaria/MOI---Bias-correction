@@ -1,7 +1,14 @@
-This repository contains R functions to derive etimates and generate simulated data according to the methods and models described in the paper "Bias-corrected maximum-likelihood estimation of multiplicityof infection and lineage frequencies". To import/merge molecular data of any type (STR, SNPs, amino acids) and format and apply further analysis please refer to the the R package "MLMOI" (https://cran.r-project.org/web/packages/MLMOI/index.html).
+This repository contains R functions to derive etimates and generate simulated data according to the methods and models described in the paper "Bias-corrected maximum-likelihood estimation of multiplicity of infection and lineage frequencies". To import/merge molecular data of any type (STR, SNPs, amino acids) and format and apply further analysis please refer to the the R package "MLMOI" (https://cran.r-project.org/web/packages/MLMOI/index.html).
 
 Description of the functions included in the repository:
 
 1. **MLE**: derives the maximum-likelihood estimate (MLE) of the MOI parameter (Poisson parameter) and the lineage (allele) frequencies;
 2. **BCMLE**: derives the bias-corrected maximum-likelihood estimate (BCMLE) of the MOI parameter (Poisson parameter) and the lineage (allele) frequencies;
-3. **HBCML1**
+3. **HBCMLE1** derives the 1st version of heuristically bias-corrected maximum-likelihood estimate (HBCMLE1) of the MOI parameter (Poisson parameter) and the lineage (allele) frequencies;
+4. **HBCMLE2** derives the 2nd version of heuristically bias-corrected maximum-likelihood estimate (HBCMLE1) of the MOI parameter (Poisson parameter) and the lineage (allele) frequencies;
+5. **HBCMLE3** derives the 1st version of heuristically bias-corrected maximum-likelihood estimate (HBCMLE1) of the MOI parameter (Poisson parameter) and the lineage (allele) frequencies;
+6. **second_order_bias** derives the approximated second-order bias of the MLE;
+7. **prob_pathological** derives the probability of pathological data;
+8. **cpoiss** this function generates conditionally Poisson distributed numbers;
+9. **mnom** this function generates multinomially distributed random vectors;
+10. **cnegb** this function generates negative binomial distributed random numbers.

@@ -1,4 +1,4 @@
-#' Generates negative binomial distributed numbers
+#' Generates negative binomial distributed random numbers
 #'
 #' @description This function generates N random numbers from Negative binomial
 #'   distribution with parameters (success, p)
