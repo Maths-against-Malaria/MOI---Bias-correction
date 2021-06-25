@@ -9,6 +9,7 @@ Description of the functions included in the repository:
 5. **HBCMLE3** derives the 1st version of heuristically bias-corrected maximum-likelihood estimate (HBCMLE1) of the MOI parameter (Poisson parameter) and the lineage (allele) frequencies;
 6. **second_order_bias** derives the approximated second-order bias of the MLE;
 7. **prob_pathological** derives the probability of pathological data;
-8. **cpoiss** this function generates conditionally Poisson distributed numbers;
-9. **mnom** this function generates multinomially distributed random vectors;
-10. **cnegb** this function generates negative binomial distributed random numbers.
+8. **cpoiss** generates conditionally Poisson distributed numbers;
+9. **mnom** generates multinomially distributed random vectors;
+10. **cnegb** generates negative binomial distributed random numbers.
+11. **Cramer-Rao lower bounds**  derives Cramer-Rao lower bounds (CRLB) of the model parameters

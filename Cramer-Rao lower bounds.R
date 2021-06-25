@@ -1,5 +1,14 @@
-#Cramer Rao lower bounds
-
+#' Cramer-Rao lower bounds (CRLB) of the model parameters
+#'
+#' @param N integer; sample size
+#' @param lambda numeric; MOI parameter
+#' @param p numeric vector; lineage frequencies
+#'
+#' @return Cramer-Rao lower bounds (CRLB) of the model parameters for the
+#'   specified model parameters and sample size
+#' @export
+#'
+#' @examples
 crlb <- function(N, lambda, p){
     p <- sort(p,decreasing = T)
     dk <- exp(lambda*p)-1
