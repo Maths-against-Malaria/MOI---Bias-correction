@@ -11,6 +11,6 @@ Description of the functions included in the repository:
 7. **prob_pathological** derives the probability of pathological data;
 8. **cpoiss** generates conditionally Poisson distributed numbers;
 9. **mnom** generates multinomially distributed random vectors;
-10. **cnegb** generates negative binomial distributed random numbers.
-11. **Cramer-Rao lower bounds**  derives Cramer-Rao lower bounds (CRLB) of the model parameters
-12. **simulation_bc** the core function for the simulation study
+10. **cnegb** generates negative binomial distributed random numbers;
+11. **Cramer-Rao lower bounds**  derives Cramer-Rao lower bounds (CRLB) of the model parameters;
+12. **simulation_bc** the core function for the simulation study.
