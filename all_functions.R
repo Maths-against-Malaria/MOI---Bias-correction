@@ -305,7 +305,7 @@ simu_CP <- function(S, ssize, linfreq, path, lambda){
     simfinal <- rep(list(matrix(NA, S, 21 + 5*n)), sz)
     sim <- 0
     while (sim < S){
-        M <- mnom(cpoiss(lambda, NN), p)
+        M <- sign(mnom(cpoiss(lambda, NN), p))
         NkN <- colSums(M)
         if (sum(NkN) <= NN || max(NkN) == NN){
             
@@ -478,7 +478,7 @@ simu_CP <- function(S, ssize, linfreq, path, lambda){
 #'
 innersamplegenerator_CP <- function(Nk,N,lambda,p,n) {
     while (is.na(Nk[1]) == TRUE){
-        MN <- mnom(N, lambda, p, n)
+        MN <- sign(mnom(cpoiss(lambda, N), p))
         Nk <- colSums(MN)
         if (sum(Nk) <= N || max(Nk) == N){
             Nk <- NA
