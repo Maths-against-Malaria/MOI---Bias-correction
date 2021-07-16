@@ -10,32 +10,33 @@
 #' @export
 #'
 simu_CP <- function(S, ssize, linfreq, path, lambda){
-    n <- length(p)
+    n <- length(linfreq)
     p <- as.vector(round(linfreq, digits = 2))
     sz <- length(ssize)
     ssize <- sort(ssize, decreasing = T)
     NN <- ssize[1]
     simfinal <- rep(list(matrix(NA, S, 21 + 5*n)), sz)
+    sim <- 0
     while (sim < S){
-        M <- mnom(NN, lambda, p, n)
+        M <- mnom(cpoiss(lambda, NN), p)
         NkN <- colSums(M)
         if (sum(NkN) <= NN || max(NkN) == NN){
             
         }else{
             sim <- sim + 1
-            mleN <- MLE(NkN, NN)
-            bcmleN <- BCMLE(NkN, NN)
-            hbcmle1N <- HBCMLE1(NkN, NN)
-            hbcmle2N <- HBCMLE2(NkN, NN)
-            hbcmle3N <- HBCMLE3(NkN, NN)
+            mleN <- MLE(NN, NkN)
+            bcmleN <- BCMLE(NN, NkN)
+            hbcmle1N <- HBCMLE1(NN, NkN)
+            hbcmle2N <- HBCMLE2(NN, NkN)
+            hbcmle3N <- HBCMLE3(NN, NkN)
             
-            est_lambda_psi_N <- c(mleN[[1]], mleN[[2]],
+            est_lambda_psi_N <- c(mleN[[1]], mleN[[2]], mleN[[3]],
                                 bcmleN[[1]], bcmleN[[2]],
                                 hbcmle1N[[1]], hbcmle1N[[2]], 
                                 hbcmle2N[[1]], hbcmle2N[[2]],
                                 hbcmle3N[[1]], hbcmle3N[[2]])
             
-            mlepn <- mleN[[3]]
+            mlepn <- mleN[[4]]
             bcmlepn <- bcmleN[[3]] 
             bcmleqpn <- hbcmle1N[[3]] 
             bcmleqqpn <- hbcmle2N[[3]] 
@@ -74,19 +75,19 @@ simu_CP <- function(S, ssize, linfreq, path, lambda){
                     M <- newdata[[1]]
                     Nk <- newdata[[2]]
                     
-                    mle <- MLE(Nk, N)
-                    bcmle <- BCMLE(Nk, N)
-                    hbcmle1 <- HBCMLE1(Nk, N)
-                    hbcmle2 <- HBCMLE2(Nk, N)
-                    hbcmle3 <- HBCMLE3(Nk, N)
+                    mle <- MLE(N, Nk)
+                    bcmle <- BCMLE(N, Nk)
+                    hbcmle1 <- HBCMLE1(N, Nk)
+                    hbcmle2 <- HBCMLE2(N, Nk)
+                    hbcmle3 <- HBCMLE3(N, Nk)
                     
-                    est_lambda_psi <- c(mle[[1]], mle[[2]],
+                    est_lambda_psi <- c(mle[[1]], mle[[2]], mle[[3]],
                                         bcmle[[1]], bcmle[[2]],
                                         hbcmle1[[1]], hbcmle1[[2]], 
                                         hbcmle2[[1]], hbcmle2[[2]],
                                         hbcmle3[[1]], hbcmle3[[2]])
                     
-                    mlep <- mle[[3]]
+                    mlep <- mle[[4]]
                     bcmlep <- bcmle[[3]] 
                     bcmleqp <- hbcmle1[[3]] 
                     bcmleqqp <- hbcmle2[[3]] 
@@ -118,19 +119,20 @@ simu_CP <- function(S, ssize, linfreq, path, lambda){
                                              kl, klbc, klbcq, klbcqq, klbcqqq)
                     
                 }else{
-                    mle <- MLE(Nk, N)
-                    bcmle <- BCMLE(Nk, N)
-                    hbcmle1 <- HBCMLE1(Nk, N)
-                    hbcmle2 <- HBCMLE2(Nk, N)
-                    hbcmle3 <- HBCMLE3(Nk, N)
                     
-                    est_lambda_psi <- c(mle[[1]], mle[[2]],
+                    mle <- MLE(N, Nk)
+                    bcmle <- BCMLE(N, Nk)
+                    hbcmle1 <- HBCMLE1(N, Nk)
+                    hbcmle2 <- HBCMLE2(N, Nk)
+                    hbcmle3 <- HBCMLE3(N, Nk)
+                    
+                    est_lambda_psi <- c(mle[[1]], mle[[2]], mle[[3]],
                                         bcmle[[1]], bcmle[[2]],
                                         hbcmle1[[1]], hbcmle1[[2]], 
                                         hbcmle2[[1]], hbcmle2[[2]],
                                         hbcmle3[[1]], hbcmle3[[2]])
                     
-                    mlep <- mle[[3]]
+                    mlep <- mle[[4]]
                     bcmlep <- bcmle[[3]] 
                     bcmleqp <- hbcmle1[[3]] 
                     bcmleqqp <- hbcmle2[[3]] 

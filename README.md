@@ -13,4 +13,5 @@ Description of the functions included in the repository:
 9. **mnom** generates multinomially distributed random vectors;
 10. **cnegb** generates negative binomial distributed random numbers;
 11. **Cramer-Rao lower bounds**  derives Cramer-Rao lower bounds (CRLB) of the model parameters;
-12. **simulation_bc** the core function for the simulation study.
+12. **simulation_bc** the core function for the simulation study;
+13. **all_functions** this file contains all the functions described above.
